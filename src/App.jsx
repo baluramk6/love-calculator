@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import Love from "./components/Love";
 import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer";
