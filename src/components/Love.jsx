@@ -1,5 +1,17 @@
+import {
+  Box,
+  HStack,
+  Image,
+  Heading,
+  Text,
+  FormControl,
+  FormLabel,
+  VStack,
+  Input,
+  Button,
+  calc,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
-import "./love.css";
 
 const Love = () => {
   const [yourName, setYourName] = useState("");
@@ -17,40 +29,80 @@ const Love = () => {
   };
 
   return (
-    <div className="container">
-      <div>
+    <Box
+      w="100%"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <VStack
+        h="40vh"
+        w={["100%", "50%", "30%"]}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        gap={2}
+      >
         {love > 1 && (
-          <img src="./assets/heart-with-cupid-arrow-icon.webp" alt="" />
+          <Image
+            w={16}
+            src="./assets/heart-with-cupid-arrow-icon.webp"
+            alt=""
+          />
         )}
         {love > 1 ? (
-          <h1>{`Your Love is: ${love}%`}</h1>
+          <Heading
+            fontSize={["xl", "2xl", "4xl"]}
+            as="h1"
+          >{`Your Love is: ${love}%`}</Heading>
         ) : (
-          <h1>Happy Valentine's Day💘</h1>
+          <Heading as="h1">Happy Valentine's Day💘</Heading>
         )}
-        {love < 50 && love > 1 && <h3>Tips: Give some gift🎁</h3>}
-        {love > 50 && love <= 60 && <h3>Tips: Average, give some time💑</h3>}
-        {love > 60 && love <= 90 && <h3>Tips: Good, keep it up🚀</h3>}
-        {love > 90 && <h3>Tips: Happy Valentine's Day💘</h3>}
-      </div>
-      <div className="formContainer">
+        {love < 50 && love > 1 && (
+          <Text fontSize="md">Tips: Give some gift🎁</Text>
+        )}
+        {love > 50 && love <= 60 && (
+          <Text fontSize="md">Tips: Average, give some time💑</Text>
+        )}
+        {love > 60 && love <= 90 && (
+          <Text fontSize="md">Tips: Good, keep it up🚀</Text>
+        )}
+        {love > 90 && <Text fontSize="md">Tips: Happy Valentine's Day💘</Text>}
+      </VStack>
+      <VStack
+        h="40vh"
+        w={["100%", "50%", "30%"]}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        boxShadow="base"
+        p="6"
+        rounded="md"
+      >
         <form action="" onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="">Enter your name:</label>
-            <input required minLength={3} type="text" />
-          </div>
-          <div>
-            <label htmlFor="">Enter your partner name:</label>
-            <input required minLength={3} type="text" />
-          </div>
-          <div>
-            <button type="submit">
-              Check Now
-              <img src="/assets/finding-love-icon.webp" alt="" />
-            </button>
-          </div>
+          <FormControl>
+            <VStack spacing={4}>
+              <FormLabel fontSize="large">Enter your name</FormLabel>
+              <Input required minLength={3} type="text" />
+              <FormLabel fontSize="large">Enter your partner name</FormLabel>
+              <Input required minLength={3} type="text" />
+              <Button
+                type="submit"
+                colorScheme="pink"
+                variant="outline"
+                w="100%"
+                rightIcon={
+                  <Image w="25px" src="/assets/finding-love-icon.webp" alt="" />
+                }
+              >
+                Check Now
+              </Button>
+            </VStack>
+          </FormControl>
         </form>
-      </div>
-    </div>
+      </VStack>
+    </Box>
   );
 };
 
