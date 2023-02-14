@@ -1,0 +1,101 @@
+.container {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://png.pngtree.com/background/20210710/original/pngtree-pink-purple-romantic-love-background-design-picture-image_977454.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+form > div:nth-child(1),
+:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+form > div > label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.625rem;
+  color: #be0851;
+}
+
+form > div > input {
+  height: 3rem;
+  width: 100%;
+  min-width: 250px;
+  border: none;
+  font-size: 1.5rem;
+  color: #e95596;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-left: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+form > div > button {
+  height: 3rem;
+  width: 100%;
+  min-width: 250px;
+  border: none;
+  font-size: 1.5rem;
+  color: #e95596;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+form > div > input:focus {
+  outline-style: solid;
+  outline-width: 0.125rem;
+  outline-color: #e95596;
+}
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+button > img {
+  width: 1.875rem;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > div > img {
+  width: 7rem;
+}
